@@ -1,3 +1,7 @@
+// one of my first time actually understand a js code
+// yippeeeee
+// credit to banyu my friend who teach me
+
 function blue_even() {
   const items = document.querySelectorAll("#list li");
 
