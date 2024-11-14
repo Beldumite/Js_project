@@ -3,22 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Li Generator</title>
   </head>
   <body>
     <ul></ul>
 
     <h2>Konfigurasi</h2>
-    <input type="text" id="content" placeholder="Ketik Teksnya Disini" />
+    <input
+      type="text"
+      id="content"
+      placeholder="Ketik Teksnya Disini"
+      oninput="updateStatus()"
+    />
     <br />
     <input
       type="text"
       id="num"
       placeholder="Mau berapa banyak?"
       style="margin: 10px; margin-left: 0px"
+      oninput="updateStatus()"
     />
     <br />
-    <button onclick="updateStatus()">Enter</button>
 
     <h2>Warna Text</h2>
     <input type="radio" id="default" name="textColor" value="black" />
