@@ -46,7 +46,7 @@ function deleteRow(row) {
 function updateTableNumber() {
   const rows = document.querySelector("#outputTable tbody").rows;
   for (let i = 0; i < rows.length; i++) {
-    rows[i].cells[0].textContent = i + 1;
+    rows[i + 1].cells[0].textContent = i + 1;
   }
   num = rows.length;
 }
