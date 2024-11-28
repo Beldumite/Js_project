@@ -6,10 +6,10 @@
     <title>Inline Edit</title>
     <style>
       #outputTable {
-        width: 500px;
-        max-width: 500px;
+        width: 700px;
+        max-width: 700px;
         text-align: center;
-        overflow: hidden;
+        border-collapse: collapse;
         table-layout: fixed;
 
         img {
@@ -17,6 +17,7 @@
         }
         input {
           max-width: 90%;
+          height: auto;
         }
 
         tr td:nth-child(1) {
@@ -26,10 +27,38 @@
         tr td:nth-child(3) {
           width: 70px;
         }
+
+        td {
+          border: 1px solid black;
+          padding: 4px;
+        }
+
+        tr:nth-child(1) td {
+          background-color: rgb(19, 184, 99);
+          color: white;
+        }
       }
 
       .red {
         background-color: red;
+      }
+
+      button {
+        background-color: #2ea44f;
+        color: white;
+        border: 2px solid rgba(27, 31, 35, 0.15);
+        border-radius: 6px;
+        box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+        cursor: pointer;
+        padding: 1px 20px;
+      }
+
+      .hapus {
+        background-color: red;
+      }
+
+      button:hover {
+        box-shadow: rgba(27, 31, 35, 0.242) 2px 3px 0;
       }
     </style>
   </head>
@@ -54,7 +83,7 @@
     </table>
     <br />
     <br />
-    <table id="outputTable" border="1">
+    <table id="outputTable">
       <tr>
         <td>No</td>
         <td>Nama Buah</td>

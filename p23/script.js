@@ -18,7 +18,7 @@ function updateTable() {
   <td><span>${beratBuah} Kg</span></td>
   <td><span><img src="${gambar}" alt="${namaBuah}"></span></td>
   <td>
-  <button onclick="deleteRow(this)">Hapus</button>
+  <button onclick="deleteRow(this)" class="hapus">Hapus</button>
   <button onclick="editRow(this)">Edit</button>
   <button onclick="saveRow(this)" style="display: none;">Save</button>
   </td>
