@@ -29,8 +29,10 @@ function updateTable() {
   if (parseFloat(beratBuah) > 5) {
     beratBuahSpan.classList.add("red");
   }
-  num++;
-  // updateTableNumber();
+  updateTableNumber();
+  document.querySelector("#buah").value = "";
+  document.querySelector("#berat").value = "";
+  document.querySelector("#gambar").value = "";
 }
 
 function isEmpty(namaBuah, beratBuah, gambar) {
@@ -50,8 +52,8 @@ function deleteRow(button) {
 
 function updateTableNumber() {
   const rows = document.querySelector("#outputTable tbody").rows;
-  for (let i = 0; i < rows.length; i++) {
-    rows[i + 1].cells[0].textContent = i + 1;
+  for (let i = 1; i < rows.length; i++) {
+    rows[i].cells[0].textContent = i;
   }
   num = rows.length;
 }

@@ -4,10 +4,10 @@ function updateTable() {
   const namaBuah = document.querySelector("#fruit").value;
   const beratBuah = document.querySelector("#weight").value;
 
-  if (namaBuah === "" || beratBuah === "") {
-    alert("Tolong isi datanya");
-    return;
-  }
+  // if (namaBuah === "" || beratBuah === "") {
+  //   alert("Tolong isi datanya");
+  //   return;
+  // }
 
   num++;
 
@@ -45,8 +45,9 @@ function deleteRow(row) {
 
 function updateTableNumber() {
   const rows = document.querySelector("#outputTable tbody").rows;
-  for (let i = 0; i < rows.length; i++) {
-    rows[i + 1].cells[0].textContent = i + 1;
+  for (let i = 1; i < rows.length; i++) {
+    console.log((rows[i].cells[0].textContent = i));
+    rows[i].cells[0].textContent = i;
   }
   num = rows.length;
 }
