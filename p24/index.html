@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exam Generator</title>
     <style>
-      /* Style updates for the table */
       table {
         border-collapse: collapse;
       }
       #outputTable {
         width: 700px;
-        max-width: 700px;
+        min-width: 700px;
         text-align: center;
         border-collapse: collapse;
         table-layout: fixed;
+      }
+
+      thead tr th {
+        min-width: 700px;
       }
 
       td,
@@ -78,19 +81,6 @@
         </tr>
       </thead>
       <tbody></tbody>
-    </table>
-
-    <table>
-      <tr>
-        <td rowspan="2">aku</td>
-        <td colspan="3">question</td>
-        <td rowspan="2">waktu</td>
-      </tr>
-      <tr>
-        <td>sksu</td>
-        <td>dwad</td>
-        <td>ed</td>
-      </tr>
     </table>
 
     <script src="script.js"></script>

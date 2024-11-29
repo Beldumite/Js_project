@@ -5,37 +5,52 @@ function updateTable() {
   const options = document.querySelector("#options").value.split(",");
   const time = document.querySelector("#time").value;
 
-  if (isEmpty(question, options, time)) {
-    return;
-  }
+  // if (isEmpty(question, options, time)) {
+  //   return;
+  // }
 
+  const thead = document.querySelectorAll("#outputTable thead tr th");
   const table = document.querySelector("#outputTable tbody");
   const newRow = table.insertRow();
+  const newRow2 = table.insertRow();
 
   let optionsHTML = "";
   for (let index = 0; index < options.length; index++) {
     let optionText = options[index].trim();
-    let optionHTML = `<td><label><input type="radio" name="question${num}" /> ${String.fromCharCode(
+    let optionHTML = `<label><input type="radio" name="question${num}" /> ${String.fromCharCode(
       65 + index
-    )}. ${optionText}</label></td>`;
+    )}. ${optionText}</label><br>`;
     optionsHTML += optionHTML;
   }
 
-  newRow.innerHTML = `
-    <tr>
-        <td rowspan="2">${num}</td>
-        <td colspan="3">${question}</td>
-        <td rowspan="2">${time} menit</td>
-    </tr>
-    <tr>
-        <td>${optionsHTML}</td>
-    </tr>
+  // thead
+  thead[1].colSpan = "3";
+  // tbody
 
+  const numCell = newRow.insertCell(0);
+  numCell.rowSpan = "2";
+  console.log(numCell.rowspan);
+
+  numCell.textContent = num;
+
+  const questionCell = newRow.insertCell(1);
+  questionCell.colSpan = 3;
+  questionCell.textContent = question;
+
+  const timerCells = newRow.insertCell(2);
+  timerCells.rowSpan = "2";
+  startTimer(time, timerCells);
+
+  newRow2.innerHTML = `
+  <tr><td colspan="3" style="text-align:left;">${optionsHTML}</td>
+  </tr>
   
   `;
 
   num++;
-  resetFields();
+  document.querySelector("#question").value = "";
+  document.querySelector("#options").value = "";
+  document.querySelector("#time").value = "";
 }
 
 function isEmpty(question, options, time) {
@@ -47,13 +62,18 @@ function isEmpty(question, options, time) {
   }
 }
 
-function deleteRow(button) {
-  const row = button.closest("tr");
-  row.remove();
-}
+function startTimer(duration, cell) {
+  let remainingTime = duration * 60;
+  const interval = setInterval(() => {
+    const min = parseInt(remainingTime / 60, 10);
+    const sec = parseInt(remainingTime % 60, 10);
+    cell.textContent = `${min}:${sec < 10 ? "0" : ""}${sec}`;
 
-function resetFields() {
-  document.querySelector("#question").value = "";
-  document.querySelector("#options").value = "";
-  document.querySelector("#time").value = "";
+    if (remainingTime < 0) {
+      clearInterval(interval);
+      cell.textContent = "Waktu Habis!!";
+    } else {
+      remainingTime--;
+    }
+  }, 1000);
 }
