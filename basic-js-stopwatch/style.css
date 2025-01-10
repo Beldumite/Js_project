@@ -1,0 +1,9 @@
+button {
+  width: 100px;
+  color: white;
+  background-color: green;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+/* mau make tailwind tapi udah jam 2 :< */

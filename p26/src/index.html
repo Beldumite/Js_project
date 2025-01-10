@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P26</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Angka</th>
+        <td>
+          <input type="text" id="numbers" />
+        </td>
+      </tr>
+      <tr>
+        <th>Sort</th>
+        <td>
+          <input type="radio" id="asc" name="sort" value="asc" />
+          <label for="asc">Ascending</label>
+          <input type="radio" id="dsc" name="sort" value="dsc" />
+          <label for="dsc">Descending</label>
+        </td>
+      </tr>
+      <tr>
+        <td><button onclick="sortNum()">Hasilkan</button></td>
+      </tr>
+    </table>
+    <table id="outputTable" border="1" style="text-align: center"></table>
+    <script src="script.js"></script>
+  </body>
+</html>

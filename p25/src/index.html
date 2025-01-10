@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number</title>
+    <style>
+      body {
+        margin-left: 20px;
+      }
+      table {
+        margin-top: 20px;
+        td {
+          padding: 5px;
+        }
+        button {
+          padding: 2px;
+          width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table id="section">
+      <tr>
+        <td>Angka Awal:</td>
+        <td>Angka Akhir:</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="number" id="firstNumber" placeholder="Contoh: 2" />
+        </td>
+        <td>
+          <input type="number" id="lastNumber" placeholder="Contoh: 50" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><button onclick="updateTable()">Hasilkan</button></td>
+      </tr>
+    </table>
+    <table id="outputTable" border="1" style="text-align: center"></table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
