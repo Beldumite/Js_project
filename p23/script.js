@@ -5,9 +5,9 @@ function updateTable() {
   const beratBuah = document.querySelector("#berat").value;
   const gambar = document.querySelector("#gambar").value;
 
-  if (isEmpty(namaBuah, beratBuah, gambar)) {
-    return;
-  }
+  // if (isEmpty(namaBuah, beratBuah, gambar)) {
+  //   return;
+  // }
 
   const table = document.querySelector("#outputTable tbody");
   const newRow = table.insertRow();
@@ -35,14 +35,14 @@ function updateTable() {
   document.querySelector("#gambar").value = "";
 }
 
-function isEmpty(namaBuah, beratBuah, gambar) {
-  if (namaBuah === "" || beratBuah === "" || gambar === "") {
-    alert("Tolong isi datanya");
-    return true;
-  } else {
-    return false;
-  }
-}
+// function isEmpty(namaBuah, beratBuah, gambar) {
+//   if (namaBuah === "" || beratBuah === "" || gambar === "") {
+//     alert("Tolong isi datanya");
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 function deleteRow(button) {
   row = button.closest("tr");

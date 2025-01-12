@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>p28</title>
     <style>
-      #outputTable {
+      .mainTable {
         margin-top: 20px;
         width: 700px;
         max-width: 700px;
@@ -34,7 +34,7 @@
           padding: 4px;
         }
 
-        tr:nth-child(1) td {
+        thead tr td {
           background-color: rgb(19, 184, 99);
           color: white;
         }
@@ -62,11 +62,11 @@
         box-shadow: rgba(27, 31, 35, 0.242) 2px 3px 0;
       }
 
-      #action {
+      /* #action {
         display: flex;
         flex-direction: column;
         gap: 5px;
-      }
+      } */
 
       .hidden {
         display: none;
@@ -89,19 +89,24 @@
       </tr>
       <tr>
         <td></td>
-        <td colspan="2"><button onclick="updateTable()">Generate</button></td>
+        <td colspan="2"><button onclick="updateArray()">Generate</button></td>
       </tr>
     </table>
-    <table id="outputTable">
-      <tr>
-        <td>No</td>
-        <td>Nama Buah</td>
-        <td>Berat</td>
-        <td>Gambar</td>
-        <td>Action</td>
-      </tr>
+    <table class="mainTable">
+      <thead>
+        <tr>
+          <td>No</td>
+          <td>Nama Buah</td>
+          <td>Berat</td>
+          <td>Gambar</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+
+      <tbody id="outputTable"></tbody>
     </table>
 
     <script src="script.js"></script>
   </body>
-</html>
+</html
+
