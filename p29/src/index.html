@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>p28</title>
+    <title>p29</title>
     <style>
       #inputTable {
         text-align: left;
@@ -75,6 +75,12 @@
       .hidden {
         display: none;
       }
+
+      button:disabled {
+        background-color: grey !important;
+        cursor: not-allowed;
+      }
+
     </style>
   </head>
   <body>
@@ -108,10 +114,15 @@
           <td>Action</td>
         </tr>
       </thead>
-
       <tbody id="outputTable"></tbody>
     </table>
 
+
+    <div style="margin-top: 20px; text-align: center;">
+      <button id="prevButton" onclick="prevPage()">Previous</button>
+      <span id="pageInfo" style="margin: 0 10px;"></span>
+      <button id="nextButton" onclick="nextPage()">Next</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html
