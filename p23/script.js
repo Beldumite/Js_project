@@ -5,9 +5,9 @@ function updateTable() {
   const beratBuah = document.querySelector("#berat").value;
   const gambar = document.querySelector("#gambar").value;
 
-  // if (isEmpty(namaBuah, beratBuah, gambar)) {
-  //   return;
-  // }
+  if (isEmpty(namaBuah, beratBuah, gambar)) {
+    return;
+  }
 
   const table = document.querySelector("#outputTable tbody");
   const newRow = table.insertRow();
@@ -35,14 +35,14 @@ function updateTable() {
   document.querySelector("#gambar").value = "";
 }
 
-// function isEmpty(namaBuah, beratBuah, gambar) {
-//   if (namaBuah === "" || beratBuah === "" || gambar === "") {
-//     alert("Tolong isi datanya");
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
+function isEmpty(namaBuah, beratBuah, gambar) {
+  if (namaBuah === "" || beratBuah === "" || gambar === "") {
+    alert("Tolong isi datanya");
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function deleteRow(button) {
   row = button.closest("tr");
@@ -67,7 +67,9 @@ function editRow(button) {
       input.value = span[i].children[0].src;
     } else if (span[i].textContent.includes("Kg")) {
       input.type = "number";
-      input.value = span[i].textContent;
+      input.value = parseFloat(span[i].textContent);
+      const beratBuah = span[i].closest("td");
+      beratBuah.classList.remove("red");
     } else {
       input.type = "text";
       input.value = span[i].textContent;
@@ -87,6 +89,10 @@ function saveRow(button) {
       console.log(span);
     } else if (input[i].type === "number") {
       span.textContent = `${input[i].value} Kg`;
+      const beratBuah = input[i].closest("td");
+      if (parseFloat(input[i].value) >= 5) {
+        beratBuah.classList.add("red");
+      }
     } else {
       span.textContent = input[i].value;
     }
