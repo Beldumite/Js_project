@@ -17,29 +17,39 @@ function updateTable() {
     Arr.push(i);
   }
 
+  // const primeArr = Arr.map(checkIsPrime);
+
+  // primeArr.forEach((n, index) => {
+  //   if (n === undefined) {
+  //     Arr[index].remove;
+  //   } else {
+  //     console.log(n);
+  //   }
+  // });
+
   const primeArr = Arr.filter(checkIsPrime);
 
   const th = outputTable.insertRow();
   th.innerHTML = `
-  <thead>
-      <td>Bilangan prima antara ${firstNum} dan ${lastNum}</td>
-  </thead>`;
+    <thead>
+        <td>Bilangan prima antara ${firstNum} dan ${lastNum}</td>
+    </thead>`;
 
   primeArr.forEach((i) => {
     const newRow = outputTable.insertRow();
-    newRow.innerHTML = `
-    <tr>
-      <td>${i}</td>
-    </tr>
-    `;
+    newRow.innerHTML = `   
+      <tr>
+        <td>${i}</td>
+      </tr>
+      `;
   });
 }
 
 function checkIsPrime(n) {
   for (i = 2, s = Math.sqrt(n); i <= s; i++) {
     if (n % i === 0) {
-      return false;
+      return;
     }
   }
-  return true;
+  return n;
 }

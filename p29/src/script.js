@@ -22,8 +22,8 @@ function updateTable() {
     <tr>
       <td>${num}</td>
       <td><input type="text" id="newFruit" value="${fruit[0]}"></td>
-      <td><input type="text" id="newWeight" value="${fruit[1]}"></td>
-      <td><input type="text" id="newImage" value="${fruit[2]}"></td>
+      <td><input type="number" id="newWeight" value="${fruit[1]}"></td>
+      <td><input type="url" id="newImage" value="${fruit[2]}"></td>
       <td id="action">
       <button class="red" onclick="deleteRow(${realIndex})">Hapus</button>
       <button onclick="saveRow(${realIndex})">Save</button></td>
@@ -49,6 +49,25 @@ function updateTable() {
   ).textContent = `Page ${currentPage} of ${Math.ceil(
     Fruits.length / rowsPerPage
   )} Page`;
+
+  // let pageInfo = (document.querySelector("#pageInfo") = () => {
+  //   for (let i = 1; i < Math.ceil(Fruits.length / rowsPerPage); i++) {
+  //     const button = document.createElement("button");
+  //     button.innerText = i;
+  //     button.onclick = () => {
+  //       currentPage = i;
+  //       updateTable();
+  //     };
+  //     pageInfo.appendChild(button);
+  //   }
+  // });
+
+  // document.querySelector("#pageInfo").innerHTML = Array.from(
+  //   { length: Math.ceil(Fruits.length / rowsPerPage) },
+  //   (_, i) =>
+  //     `<button onclick="currentPage=${i + 1};updateTable()">${i + 1}</button>`
+  // ).join("");
+
   document.querySelector("#prevButton").disabled = currentPage === 1;
   document.querySelector("#nextButton").disabled = end >= Fruits.length;
 

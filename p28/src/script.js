@@ -14,8 +14,8 @@ function updateTable() {
     <tr>
       <td>${num}</td>
       <td><input type="text" id="newFruit" value="${fruit[0]}"></td>
-      <td><input type="text" id="newWeight" value="${fruit[1]}"></td>
-      <td><input type="text" id="newImage" value="${fruit[2]}"></td>
+      <td><input type="number" id="newWeight" value="${fruit[1]}"></td>
+      <td><input type="url" id="newImage" value="${fruit[2]}"></td>
       <td id="action">
       <button class="red" onclick="deleteRow(${num - 1})">Hapus</button>
       <button onclick="saveRow(${num - 1})">Save</button></td>
